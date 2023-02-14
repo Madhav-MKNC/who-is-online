@@ -1,0 +1,8 @@
+
+
+active tab url detecion
+
+badge counter 
+
+ON/OFF like dark mode extension 
+
