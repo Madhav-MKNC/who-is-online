@@ -6,3 +6,8 @@ badge counter
 
 ON/OFF like dark mode extension 
 
+Chatroom 
+
+Private/public 
+
+Scaling
