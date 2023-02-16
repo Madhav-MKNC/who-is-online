@@ -6,8 +6,9 @@ badge counter
 
 ON/OFF like dark mode extension 
 
-Chatroom 
+Chatroom (demo: https://chat-room.adarshkumar35.repl.co/)
 
 Private/public 
 
 Scaling
+
