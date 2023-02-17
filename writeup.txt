@@ -1,4 +1,4 @@
-
+[IGNORE THIS]
 
 active tab url detecion
 
@@ -6,9 +6,14 @@ badge counter
 
 ON/OFF like dark mode extension 
 
-Chatroom (demo: https://chat-room.adarshkumar35.repl.co/)
+backend
+Chatroom 
 
 Private/public 
 
 Scaling
+
+online traffic
+
+chatroom (demo: https://chat-room.adarshkumar35.repl.co/?)
 
