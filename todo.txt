@@ -1,6 +1,6 @@
 [IGNORE THIS]
 
-active tab url detecion
+active tab url detecion [√]
 
 badge counter 
 
