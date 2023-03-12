@@ -7,7 +7,7 @@
 window.addEventListener('DOMContentLoaded', () => {
   let res = document.getElementById("res");
   res.innerHTML = 'this is res';
-  
+
   // ...query for the active tab...
   chrome.tabs.query({
     active: true,
@@ -15,12 +15,12 @@ window.addEventListener('DOMContentLoaded', () => {
   }, tabs => {
     // ...and send a request for the DOM info...
     chrome.tabs.sendMessage(
-        tabs[0].id,
-        {from: 'popup', subject: 'DOMInfo'},
-        // ...also specifying a callback to be called 
-        //    from the receiving end (content script).
-        (url)=>{
-          res.innerHTML = url
-        });
+      tabs[0].id,
+      { from: 'popup', subject: 'DOMInfo' },
+      // ...also specifying a callback to be called 
+      //    from the receiving end (content script).
+      (url) => {
+        res.innerHTML = url
+      });
   });
 });
