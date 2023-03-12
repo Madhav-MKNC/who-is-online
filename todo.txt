@@ -17,4 +17,12 @@ features
     
 Chatroom
     - friends
-    - Private/pub
+    - Private/public 
+
+Scaling
+
+[online traffic]
+
+chatroom (demo: https://chat-room.adarshkumar35.repl.co/?)
+
+(local and remote synced)
