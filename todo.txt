@@ -2,18 +2,26 @@
 
 active tab url detecion [√]
 
+ON/OFF like dark mode extension
+
 badge counter 
-
-ON/OFF like dark mode extension 
-
+ 
 backend
-Chatroom 
+    - js <=> python
+    - dsa
+    - optimized use of networks
 
-Private/public 
+features
+    - default public chatroom
+    - friends
+    
+Chatroom
+    - friends
+    - Private/public 
 
 Scaling
 
-online traffic
+[online traffic]
 
 chatroom (demo: https://chat-room.adarshkumar35.repl.co/?)
 
