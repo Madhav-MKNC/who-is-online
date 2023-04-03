@@ -1,5 +1,3 @@
-<!-- author: Adarsh Kumar (https://replit.com/@adarshkumar35) -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,316 +5,62 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#1bb566">
-    <title>node js sockets</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            height: calc(100vh - 2px);
-            background: #4c4c4c;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-top: 2px;
-        }
-
-        .chatContainer {
-/*             background: white; */
-/*             background: url('https://i.pinimg.com/736x/77/84/36/77843609952f167bbf7393b8f303cd1b.jpg'); */
-/*             background: url('https://i.pinimg.com/originals/6a/3a/9a/6a3a9aa650f610536f40bedc3e988365.jpg'); */
-/*             background: url('https://images.unsplash.com/photo-1510754468059-2ed44e286946?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MjB8MjM2ODkzOXx8ZW58MHx8fHw%3D&w=1000&q=80'); */
-/*             background: #010012; */
-            background: linear-gradient(360deg, #000000, #020022bf);
-            height: 100%;
-            width: 100%;
-            /* border-radius: 10px; */
-            /* border: 1px solid gray; */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            /*     padding: 0px 0px 28px 0px; */
-            padding: 0px 0px 4px 0px;
-        }
-
-        .messageContainer {
-            width: 96%;
-            height: 93%;
-            border-radius: 10px 10px 0px 0px;
-            overflow: auto;
-            padding: 0px 7px;
-        }
-
-        .message {
-            min-height: 34px;
-            margin: 4px 10px 4px 0px;
-        }
-
-        /* new style */
-        .msg {
-/*             background: #176b5b; */
-            background: #201960;
-            margin: 4px 0px 4px 0px;
-            color: white;
-            /*     border: 1px solid gray; */
-            padding: 7px;
-            max-width: 60%;
-            text-align: justify;
-            clear: both;
-        }
-
-        /* old style */
-        /* .msg{
-        margin: 4px 10px 4px 0px;
-        color: white;
-        border: 1px solid gray;
-        display: inline-block;
-        padding: 7px;
-        border-radius: 0px 14px 14px 14px;
-        clear: both;
-        max-width: 60%;
-        text-align: justify;
-        clear: both;
-    } */
-        .sender {
-/*             color: #30cdaf; */
-/*             color: #5188ff; */
-/*            color: #281c9d; */
-            color: #5e4cff;
-            font-size: 13px;
-        }
-
-        .mm {
-            border-radius: 6px 0px 6px 6px;
-            float: right;
-        }
-
-        .om {
-            border-radius: 0px 6px 6px 6px;
-            float: left;
-        }
-
-        .notifier {
-/*             color: gray; */
-            color: #808080a6;
-/*             border: 1px solid gray; */
-            border: 1px solid #80808087;
-            height: 18px;
-            min-width: 200px;
-            width: fit-content;
-            padding: 0px 10px 0px 10px;
-            border-radius: 10px;
-            text-align: center;
-            margin: auto;
-            float: initial;
-            clear: both;
-            margin: 4px auto 4px auto;
-        }
-
-        .sendMsg {
-            width: 99%;
-/*             background: #d1d1d1; */
-/*             background: #282a34; */
-            height: 40px;
-/*             border-radius: 18px; */
-        }
-
-        form {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        input {
-            color: white;
-            width: 86%;
-            height: 51%;
-            background: transparent;
-            border: none;
-            outline: none;
-            padding-left: 20px;
-            font-size: 18px;
-
-            padding: 10px 10px 10px 30px;
-            background: #282a34;
-            margin: 10px;
-            border-radius: 40px;
-        }
-
-        button {
-            height: 100%;
-            width: 12%;
-            font-size: 20px;
-            font-family: system-ui;
-            border-radius: 20px;
-/*             background: #250326; */
-/*             background: #323e7a; */
-            background: #e0e3ff;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-
-        .messageContainer::-webkit-scrollbar {
-            background: transparent;
-            /* border: 1px solid #34327a; */
-            width: 5px;
-            /* box-shadow: inset 0px 0px 1px 0px white; */
-        }
-
-        .messageContainer::-webkit-scrollbar-thumb {
-            background: #ffffff26;
-            border-radius: 4px;
-        }
-
-        @media (max-width: 600px) {
-            .container {
-                height: 100vh;
-            }
-
-            .container>h1 {
-                font-size: 20px;
-            }
-
-            .chatContainer{
-                background-size: cover;
-            }
-
-            .messageContainer {
-                height: calc(100% - 30px);
-                width: 96%;
-            }
-
-            .notifier {
-                height: 14px;
-                font-size: 12px;
-                min-width: auto;
-                width: fit-content;
-            }
-
-            .sendMsg {
-                height: 50px;
-                border-radius: 25px;
-            }
-
-            input{
-              margin: 10px 5px 10px 5px;
-            }
-            
-            button {
-                font-size: 16px;
-                width: 24%;
-                border-radius: 24px;
-                height: 90%;
-                margin-right: 1px;
-            }
-        }
-    </style>
+    <title>Chat Room</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <script src="https://kit.fontawesome.com/a23d9e3198.js" crossorigin="anonymous"></script>
+    
+    <!-- STYLES -->
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
     <div class="container">
         <div class="chatContainer">
             <div class="messageContainer">
-                <!-- <div class="message">
-                    mm - my messages
-                    <div class="msg mm">
-                        this is my message
-                    </div>
+
+                
+                <!-- <div class="notifier">you joined the chat as asdf</div>
+
+                <div class="notifier">asdf joined the chat</div>
+
+                <div class="msg om">
+                    <div class="sender"><span class="at">@</span>asdf</div>
+                    <div class="om">age</div>
                 </div>
-                <div class="notifier">this is notifier</div>
-                <div class="message">
-                    om - others messages
-                    <div class="msg om">
-                        this is others message
-                    </div>
+
+                <div class="msg mm">
+                    <div class="sender"><span class="at">@</span>etae</div>
+                    <div class="mm">aheat</div>
+                </div>
+                <div class="msg om">
+                    <div class="sender"><span class="at">@</span>asdf</div>
+                    <div class="om">earytwert</div>
+                </div>
+                <div class="msg mm">
+                    <div class="sender"><span class="at">@</span>etae</div>
+                    <div class="mm">jtrj</div>
                 </div> -->
+
+
             </div>
             <div class="sendMsg">
                 <form action="">
                     <input type="text" placeholder="chat with others">
-<!--                     <button>send</button> -->
-                    <button><img src='https://icons.veryicon.com/png/o/miscellaneous/ui-basic-linear-icon/send-message-2-2.png' alt='send' height='34px'></button>
+                  <button><i class="fa-solid fa-paper-plane"></i></button>
                 </form>
             </div>
         </div>
     </div>
+    
+    <!-- SCRIPTS -->
     <script src="/socket.io/socket.io.js"></script>
     <script>
-        let messageContainer = document.querySelector('.messageContainer');
-        
-        function displayMsg(sender, senderName, msg){
-            // let newMsg = `
-            //     <div class="msg">
-            //         <div class="sender">${senderName}</div>
-            //         <div class="${sender}">${msg}</div>
-            //     </div>`;
-            // let newMsgLine = document.createElement('div');
-            // newMsgLine.setAttribute('class','message');
-            let newMsg = document.createElement('div');
-            newMsg.setAttribute('class',`msg ${sender}`);
-            if(sender=='mm'){
-              newMsg.innerHTML = `
-                      <div class="sender">you</div>
-                      <div class="${sender}">${msg}</div>`;
-            }
-            else{
-              newMsg.innerHTML = `
-                      <div class="sender">${senderName}</div>
-                      <div class="${sender}">${msg}</div>`;
-            }
-            // newMsgLine.appendChild(newMsg);
-            messageContainer.appendChild(newMsg);
-            messageContainer.scroll(0, messageContainer.scrollHeight);
-        }
-        function notify(notification){
-            let notifier = document.createElement('div');
-            notifier.innerText = notification;
-            notifier.setAttribute('class','notifier');
-            messageContainer.appendChild(notifier);
-            messageContainer.scroll(0, messageContainer.scrollHeight);
-        }
-        </script>
-    <script>
         let socket = io();
-        
-        let name = getName('enter your name :');
-        function getName(str){
-            let userName = prompt(str);
-            if(userName=='' || userName==null){
-                getName('please specify your name to join the chat room :');
-            }
-            else{
-                socket.emit('user name', userName);
-                notify(`you joined the chat as ${userName}`);
-                return userName;
-            }
-        }
-        
-        socket.on('un', (name)=>{
-            notify(`${name} joined the chat`);
-        });
-        socket.on('user leaved', (wholeaved)=>{
-            notify(wholeaved);
-        });
-        
-        let form = document.querySelector('form');
-        let message = document.querySelector('input');
-        form.addEventListener('submit', (e)=>{
-            e.preventDefault();
-            if(message.value!=0){
-                socket.emit('user message', name, message.value);
-                displayMsg('mm', name, message.value);
-                message.value = '';
-            }
-        });
-
-        socket.on('um', (sender, msg) =>{
-            displayMsg('om', sender, msg);
-        });
+        let messageContainer;
+        let name;
+        let lastMsgSender;
     </script>
+    <script type="text/javascript" src='/static/client.js'></script>
+    <script type="text/javascript" src='/static/dateTime.js'></script>
+    
 </body>
 </html>
