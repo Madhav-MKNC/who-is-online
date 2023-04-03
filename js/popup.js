@@ -17,7 +17,7 @@ window.addEventListener('DOMContentLoaded', () => {
         // ...also specifying a callback to be called 
         //    from the receiving end (content script).
         (url)=>{
-          if(url=="undefined"){
+          if(url==undefined){
             res.innerHTML = "please try after some times";
           }
           else{
