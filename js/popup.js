@@ -3,7 +3,7 @@
 // Once the DOM is ready...
 window.addEventListener('DOMContentLoaded', () => {
   let res = document.getElementById("res");
-  res.innerHTML = 'this is res';
+  // res.innerHTML = 'this is res';
   
   // ...query for the active tab...
   chrome.tabs.query({
@@ -18,7 +18,7 @@ window.addEventListener('DOMContentLoaded', () => {
         //    from the receiving end (content script).
         (url)=>{
           if(url==undefined){
-            res.innerHTML = "please try after some times";
+            res.innerText = `can't connect at the moment!\nplease try again after some time or reload the page and try again`;
           }
           else{
             res.innerHTML = url
