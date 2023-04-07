@@ -11,3 +11,22 @@ Whether you're a student, professional, or simply an avid internet user, this ex
 With the ability to connect with others and share experiences, you'll never feel isolated in your online browsing experience again. 
 
 Stay tuned for the release of this innovative new Chrome extension. Get ready to take your online experience to the next level and start connecting with others across the world!
+
+
+
+## how to use?
+* step 1: clone the repository to your local pc
+```
+git clone git@github.com:Madhav-MKNC/who-is-online.git
+```
+or you can download the zip file.
+* step 2: open chrome and in the url tab type :
+```
+chrome://extensions
+```
+* step 3: turn on the developer mode in top right corner
+* step 4: click the "load package" button and select the folder in which you cloned the project
+* step 5: after that "Who is Online" extension will be loaded in your chrome
+* step 6: pin the extension.<br>
+* Now you are ready to go...
+
