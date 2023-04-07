@@ -16,8 +16,14 @@ Stay tuned for the release of this innovative new Chrome extension. Get ready to
 
 ## how to use?
 * step 1: clone the repository to your local pc
-* step 2: open chrome and type ``` chrome://extensions ``` in the url tab
-* step 3: turn on the developer mode
+```
+git clone git@github.com:Madhav-MKNC/who-is-online.git
+```
+* step 2: open chrome and in the url tab type :
+```
+chrome://extensions
+```
+* step 3: turn on the developer mode in top right corner
 * step 4: click the "load package" button and select the folder in which you cloned the project
 * step 5: after that "Who is Online" extension will be loaded in your chrome
 
